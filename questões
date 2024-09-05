@@ -1,0 +1,48 @@
+//1) Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre será a soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...), escreva um programa na linguagem que desejar onde, informado um número, ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou não a sequência.
+
+<?php
+function fibonacci($n) {
+    $a = 0;
+    $b = 1;
+    
+    while ($a <= $n) {
+        if ($a == $n) {
+            return "O número $n pertence à sequência de Fibonacci.";
+        }
+        $temp = $a;
+        $a = $b;
+        $b = $temp + $b;
+    }
+    return "O número $n não pertence à sequência de Fibonacci.";
+}
+
+// Número informado
+$num = intval(readline("Digite um número: "));
+echo fibonacci($num);
+?>
+
+// Fim Questão 1
+
+-------------------------
+
+//Início Questão 2
+//2) Escreva um programa que verifique, em uma string, a existência da letra ‘a’, seja maiúscula ou minúscula, além de informar a quantidade de vezes em que ela ocorre.
+
+<?php
+function conta_letras_a($string) {
+    $count = substr_count(strtolower($string), 'a');
+    if ($count > 0) {
+        return "A letra 'a' aparece $count vezes na string.";
+    } else {
+        return "A letra 'a' não aparece na string.";
+    }
+}
+
+// String informada
+$texto = readline("Digite uma string: ");
+echo conta_letras_a($texto);
+?>
+
+// Fim Questão 2
+
+-----------------------
